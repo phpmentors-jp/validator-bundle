@@ -18,4 +18,10 @@
             <directory>./Tests</directory>
         </testsuite>
     </testsuites>
+
+    <filter>
+        <whitelist addUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">Validator</directory>
+        </whitelist>
+    </filter>
 </phpunit>
