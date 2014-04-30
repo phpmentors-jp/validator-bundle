@@ -13,6 +13,7 @@ matrix:
 
 before_script:
  - wget http://cs.sensiolabs.org/get/php-cs-fixer.phar
+ - composer install
 
 script:
  - phpunit --coverage-text
