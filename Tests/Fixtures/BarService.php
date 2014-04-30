@@ -45,4 +45,4 @@ class BarService
     {
         return true;
     }
-} 
+}
