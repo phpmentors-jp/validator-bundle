@@ -1,5 +1,7 @@
 # Symfony2 Extra Constraint/Validator Set
 
+[![Build Status](https://travis-ci.org/phpmentors-jp/validator-bundle.svg?branch=master)](https://travis-ci.org/phpmentors-jp/validator-bundle)
+
 ## Installation
 
 via Composer/Packagist
@@ -11,6 +13,22 @@ via Composer/Packagist
 # or composer command
 $ php composer.phar requure phpmentors/validator-bundle
 ```
+
+and add a line for loading this bundle in AppKernel.php
+
+```
+class AppKernel extends Kernel
+{
+    public function registerBundles()
+    {
+        $bundles = array(
+            ...
+            new PHPMentors\ValidatorBundle\PHPMentorsValidatorBundle(),
+        );
+
+        ...
+```
+
 
 ## ServiceCallback
 

@@ -14,12 +14,13 @@
         }
     ],
     "autoload":{
-        "psr-4": {
-            "PHPMentors\\ValidatorBundle\\": ""
+        "psr-0": {
+            "PHPMentors\\ValidatorBundle": ""
         }
     },
     "require":{
         "symfony/validator": ">=2.3",
         "symfony/dependency-injection": ">=2.3"
-    }
+    },
+    "target-dir": "PHPMentors/ValidatorBundle"
 }
