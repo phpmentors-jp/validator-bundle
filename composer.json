@@ -5,7 +5,7 @@
         "Symfony",
         "Validator"
     ],
-    "homepage":"https://github.com/phpmentors-jp/PHPMentors.ValidatorBundle",
+    "homepage":"https://phpmentors-jp.github.io/validator-bundle",
     "license":"BSD-2-Clause",
     "authors": [
         {
