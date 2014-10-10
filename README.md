@@ -11,7 +11,7 @@ via Composer/Packagist
 "phpmentors/validator-bundle": "~0.1"
 
 # or composer command
-$ php composer.phar requure phpmentors/validator-bundle
+$ php composer.phar require phpmentors/validator-bundle
 ```
 
 and add a line for loading this bundle in AppKernel.php
