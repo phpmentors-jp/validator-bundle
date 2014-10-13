@@ -36,8 +36,8 @@ ServiceCallback constraint and ServiceCallbackValidator enables to validate a va
 
 ```
 /**
- * @ServiceCallback(service="mydomain.specification.email_limit",method="isSatisfiedBy",
-    message="email limit error.", errorPath="emailMax", groups={"user_check"})
+ * @ServiceCallback(service="mydomain.specification.email_limit", method="isSatisfiedBy",
+    message="email limit error.", errorPath="emailMax")
  */
 class User
 {
