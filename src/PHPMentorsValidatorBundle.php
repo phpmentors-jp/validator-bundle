@@ -14,6 +14,19 @@ namespace PHPMentors\ValidatorBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
+use PHPMentors\ValidatorBundle\DependencyInjection\PHPMentorsValidatorExtension;
+
 class PHPMentorsValidatorBundle extends Bundle
 {
+    /**
+     * {@inheritDoc}
+     */
+    public function getContainerExtension()
+    {
+        if ($this->extension === null) {
+            $this->extension = new PHPMentorsValidatorExtension();
+        }
+
+        return $this->extension;
+    }
 }

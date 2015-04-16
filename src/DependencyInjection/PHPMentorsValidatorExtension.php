@@ -30,4 +30,12 @@ class PHPMentorsValidatorExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
     }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getAlias()
+    {
+        return 'phpmentors_validator';
+    }
 }
