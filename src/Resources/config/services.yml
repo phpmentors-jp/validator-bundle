@@ -1,0 +1,51 @@
+# Copyright (c) 2014 GOTO Hidenori <hidenorigoto@gmail.com>,
+#               2015 KUBO Atsuhiro <kubo@iteman.jp>,
+# All rights reserved.
+#
+# This file is part of PHPMentorsValidatorBundle.
+#
+# This program and the accompanying materials are made available under
+# the terms of the BSD 2-Clause License which accompanies this
+# distribution, and is available at http://opensource.org/licenses/BSD-2-Clause
+
+parameters:
+    # Classes
+    phpmentors_validator.metadata_factory.class: "Symfony\\Component\\Validator\\Mapping\\Factory\\MetadataFactoryInterface"
+    phpmentors_validator.metadata_factory_factory.class: "PHPMentors\\ValidatorBundle\\Mapping\\Factory\\MetadataFactoryFactory"
+    phpmentors_validator.service_callback.class: PHPMentors\ValidatorBundle\Constraints\ServiceCallbackValidator
+    phpmentors_validator.xml_files_loader.class: "PHPMentors\\ValidatorBundle\\Mapping\\Loader\\XmlFilesLoader"
+    phpmentors_validator.yaml_files_loader.class: "PHPMentors\\ValidatorBundle\\Mapping\\Loader\\YamlFilesLoader"
+
+    # Configuration Parameters
+    phpmentors_validator.mapping_files: ~
+    phpmentors_validator.constraint_namespaces: ~
+
+services:
+    phpmentors_validator.metadata_factory:
+        class: "%phpmentors_validator.metadata_factory.class%"
+        factory_service: phpmentors_validator.metadata_factory_factory
+        factory_method: create
+
+    phpmentors_validator.metadata_factory_factory:
+        class: "%phpmentors_validator.metadata_factory_factory.class%"
+        calls:
+            - [ setConstraintNamespaces, ["%phpmentors_validator.constraint_namespaces%"] ]
+
+    phpmentors_validator.service_callback:
+        class: %phpmentors_validator.service_callback.class%
+        calls:
+            - [ setContainer, ["@service_container"] ]
+        tags:
+            - { name: validator.constraint_validator, alias: PHPMentorsServiceCallbackValidator }
+
+    phpmentors_validator.xml_files_loader:
+        class: "%phpmentors_validator.xml_files_loader.class%"
+        arguments:
+            - "%phpmentors_validator.mapping_files%"
+            - "%phpmentors_validator.constraint_namespaces%"
+
+    phpmentors_validator.yaml_files_loader:
+        class: "%phpmentors_validator.yaml_files_loader.class%"
+        arguments:
+            - "%phpmentors_validator.mapping_files%"
+            - "%phpmentors_validator.constraint_namespaces%"

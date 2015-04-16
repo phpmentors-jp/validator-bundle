@@ -1,0 +1,11 @@
+PHPMentors\ValidatorBundle\Functional\Bundle\TestBundle\Entity\User:
+    constraints:
+        - PHPMentors:ServiceCallback:
+            service: test.user_name_specification
+            method: isSatisfiedBy
+            message: "The user name is invalid."
+    properties:
+        firstName:
+            - NotBlank: ~
+        lastName:
+            - NotBlank: ~

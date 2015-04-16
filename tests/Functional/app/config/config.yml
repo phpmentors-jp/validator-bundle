@@ -1,0 +1,17 @@
+framework:
+    csrf_protection: ~
+    default_locale: en
+    form: ~
+    router: { resource: "%kernel.root_dir%/config/routing.yml" }
+    secret: test
+    session: { storage_id: session.storage.mock_file }
+    templating: { engines: [ twig ] }
+    test: ~
+    validation: ~
+
+monolog:
+    handlers:
+        main:
+            type:  stream
+            path:  "%kernel.logs_dir%/%kernel.environment%.log"
+            level: debug

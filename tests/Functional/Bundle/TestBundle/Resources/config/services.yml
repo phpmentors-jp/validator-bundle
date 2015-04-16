@@ -1,0 +1,18 @@
+parameters:
+    # Classes
+    test.user_name_specification.class: "PHPMentors\\ValidatorBundle\\Functional\\Bundle\\TestBundle\\Specification\\UserNameSpecification"
+    test.user_registration_controller.class: "PHPMentors\\ValidatorBundle\\Functional\\Bundle\\TestBundle\\Controller\\UserRegistrationController"
+
+    # Configuration Parameters
+
+services:
+    test.user_name_specification:
+        class: "%test.user_name_specification.class%"
+
+    test.user_registration_controller:
+        class: "%test.user_registration_controller.class%"
+        calls:
+            - [setContainer, ["@service_container"]]
+            - [setConversationContext, ["@phpmentors_pageflower.conversation_context"]]
+        tags:
+            - { name: phpmentors_pageflower.pageflow }
