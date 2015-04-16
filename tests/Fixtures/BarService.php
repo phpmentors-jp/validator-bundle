@@ -31,7 +31,7 @@
  * @license    http://opensource.org/licenses/BSD-2-Clause  The BSD 2-Clause License
  * @since      File available since Release 0.1.0
  */
-namespace PHPMentors\ValidatorBundle\Tests\Fixtures;
+namespace PHPMentors\ValidatorBundle\Fixtures;
 
 /**
  * @package    PHPMentors_ValidatorBundle

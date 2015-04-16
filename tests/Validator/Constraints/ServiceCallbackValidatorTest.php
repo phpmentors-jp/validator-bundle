@@ -246,7 +246,7 @@ class ServiceCallbackValidatorTest extends \PHPUnit_Framework_TestCase
         $this->SUT = new ServiceCallbackValidator();
         $this->container = $this->getMock('Symfony\Component\DependencyInjection\ContainerInterface');
         $this->SUT->setContainer($this->container);
-        $this->service = $this->getMock('PHPMentors\ValidatorBundle\Tests\Fixtures\BarService');
+        $this->service = $this->getMock('PHPMentors\ValidatorBundle\Fixtures\BarService');
         $this->container->set(self::SERVICE_NAME, $this->service);
         $this->executionContext = $this->getMock('Symfony\Component\Validator\ExecutionContextInterface');
         $this->SUT->initialize($this->executionContext);
