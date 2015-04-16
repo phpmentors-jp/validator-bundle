@@ -38,6 +38,7 @@ class Configuration implements ConfigurationInterface
                     ->addDefaultsIfNotSet()
                     ->children()
                         ->arrayNode('namespaces')
+                            ->useAttributeAsKey('alias')
                             ->defaultValue(self::$defaultConstraintNamespaces)
                             ->validate()
                                 ->always(function (array $v) use ($defaultConstraintNamespaces) {
