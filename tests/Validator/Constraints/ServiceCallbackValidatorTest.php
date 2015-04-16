@@ -163,7 +163,7 @@ class ServiceCallbackValidatorTest extends \PHPUnit_Framework_TestCase
     {
         $constraint = new ServiceCallback(array(
             'service' => self::SERVICE_NAME,
-            'method' =>  self::SERVICE_METHOD
+            'method' =>  self::SERVICE_METHOD,
         ));
 
         $return = $this->SUT->validate(null, $constraint);
@@ -184,7 +184,7 @@ class ServiceCallbackValidatorTest extends \PHPUnit_Framework_TestCase
 
         $constraint = new ServiceCallback(array(
             'service' => 'nonexistent.service',
-            'method' =>  self::SERVICE_METHOD
+            'method' =>  self::SERVICE_METHOD,
         ));
 
         $entity = new \stdClass();
@@ -207,7 +207,7 @@ class ServiceCallbackValidatorTest extends \PHPUnit_Framework_TestCase
         $constraint = new ServiceCallback(array(
             'service' => self::SERVICE_NAME,
             'method' =>  self::SERVICE_METHOD,
-            'errorPath' => $illegalErrorPath
+            'errorPath' => $illegalErrorPath,
         ));
 
         $entity = new \stdClass();

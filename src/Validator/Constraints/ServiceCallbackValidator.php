@@ -63,7 +63,7 @@ class ServiceCallbackValidator extends ConstraintValidator implements ContainerA
         }
 
         if (!$this->container->has($constraint->service)) {
-            throw new ConstraintDefinitionException;
+            throw new ConstraintDefinitionException();
         }
 
         if (null !== $constraint->errorPath && !is_string($constraint->errorPath)) {

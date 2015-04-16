@@ -33,9 +33,6 @@
  */
 namespace PHPMentors\ValidatorBundle\Validator\Constraints;
 
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\Validator\ExecutionContextInterface;
-
 /**
  * @package    PHPMentors_ValidatorBundle
  * @copyright  2014 GOTO Hidenori <hidenorigoto@gmail.com>
