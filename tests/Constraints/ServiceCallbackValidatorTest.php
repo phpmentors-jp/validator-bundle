@@ -10,7 +10,7 @@
  * distribution, and is available at http://opensource.org/licenses/BSD-2-Clause
  */
 
-namespace PHPMentors\ValidatorBundle\Validator\Constraints;
+namespace PHPMentors\ValidatorBundle\Constraints;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Validator\ExecutionContextInterface;

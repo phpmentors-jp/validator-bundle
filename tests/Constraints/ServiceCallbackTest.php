@@ -10,7 +10,7 @@
  * distribution, and is available at http://opensource.org/licenses/BSD-2-Clause
  */
 
-namespace PHPMentors\ValidatorBundle\Validator\Constraints;
+namespace PHPMentors\ValidatorBundle\Constraints;
 
 class ServiceCallbackTest extends \PHPUnit_Framework_TestCase
 {
@@ -26,7 +26,7 @@ class ServiceCallbackTest extends \PHPUnit_Framework_TestCase
             'method' =>  self::SERVICE_METHOD,
         ));
 
-        $this->assertThat($constraint, $this->isInstanceOf('PHPMentors\ValidatorBundle\Validator\Constraints\ServiceCallback'));
+        $this->assertThat($constraint, $this->isInstanceOf('PHPMentors\ValidatorBundle\Constraints\ServiceCallback'));
         $this->assertThat($constraint->validatedBy(), $this->logicalNot($this->equalTo(null)));
         $this->assertThat($constraint->getTargets(), $this->logicalNot($this->equalTo(null)));
     }

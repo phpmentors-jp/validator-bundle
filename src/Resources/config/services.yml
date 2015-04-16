@@ -8,11 +8,11 @@
 # distribution, and is available at http://opensource.org/licenses/BSD-2-Clause
 
 parameters:
-    php_mentors_validator.service_callback.class: PHPMentors\ValidatorBundle\Validator\Constraints\ServiceCallbackValidator
+    phpmentors_validator.service_callback.class: PHPMentors\ValidatorBundle\Constraints\ServiceCallbackValidator
 
 services:
-    php_mentors_validator.service_callback:
-        class: %php_mentors_validator.service_callback.class%
+    phpmentors_validator.service_callback:
+        class: %phpmentors_validator.service_callback.class%
         calls:
             - [ setContainer, ["@service_container"] ]
         tags:
