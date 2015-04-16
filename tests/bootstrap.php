@@ -10,4 +10,6 @@
  * distribution, and is available at http://opensource.org/licenses/BSD-2-Clause
  */
 
+error_reporting(E_ALL);
+
 $loader = require dirname(__DIR__).'/vendor/autoload.php';
