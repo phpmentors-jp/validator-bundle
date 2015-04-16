@@ -34,6 +34,14 @@ class PHPMentorsValidatorExtension extends Extension
     }
 
     /**
+     * {@inheritDoc}
+     */
+    public function getAlias()
+    {
+        return 'phpmentors_validator';
+    }
+
+    /**
      * @param array            $config
      * @param ContainerBuilder $container
      */
