@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright (c) 2014 GOTO Hidenori <hidenorigoto@gmail.com>,
+ * Copyright (c) 2015 KUBO Atsuhiro <kubo@iteman.jp>,
  * All rights reserved.
  *
  * This file is part of PHPMentorsValidatorBundle.
@@ -10,8 +10,13 @@
  * distribution, and is available at http://opensource.org/licenses/BSD-2-Clause
  */
 
-error_reporting(E_ALL);
+namespace PHPMentors\ValidatorBundle\Functional\Bundle\TestBundle;
 
-$loader = require dirname(__DIR__).'/vendor/autoload.php'; /* @var $loader \Composer\Autoload\ClassLoader */
+use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-Doctrine\Common\Annotations\AnnotationRegistry::registerLoader(array($loader, 'loadClass'));
+/**
+ * @since Class available since Release 1.0.0
+ */
+class TestBundle extends Bundle
+{
+}

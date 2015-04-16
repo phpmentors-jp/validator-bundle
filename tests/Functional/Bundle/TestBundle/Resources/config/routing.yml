@@ -1,0 +1,24 @@
+test_user_registration_input_get:
+    path: /user/registration/
+    defaults: { _controller: "test.user_registration_controller:inputGetAction" }
+    methods: [GET]
+
+test_user_registration_input_post:
+    path: /user/registration/
+    defaults: { _controller: "test.user_registration_controller:inputPostAction" }
+    methods: [POST]
+
+test_user_registration_confirmation_get:
+    path: /user/registration/confirmation
+    defaults: { _controller: "test.user_registration_controller:confirmationGetAction" }
+    methods: [GET]
+
+test_user_registration_confirmation_post:
+    path: /user/registration/confirmation
+    defaults: { _controller: "test.user_registration_controller:confirmationPostAction" }
+    methods: [POST]
+
+test_user_registration_success_get:
+    path: /user/registration/success
+    defaults: { _controller: "test.user_registration_controller:successGetAction" }
+    methods: [GET]
