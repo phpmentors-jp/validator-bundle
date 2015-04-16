@@ -1,26 +1,39 @@
 {
     "name": "phpmentors/validator-bundle",
+    "type": "symfony-bundle",
     "description":"Extra Validator for Symfony",
-    "keywords":[
-        "Symfony",
-        "Validator"
-    ],
-    "homepage":"https://phpmentors-jp.github.io/validator-bundle",
-    "license":"BSD-2-Clause",
+    "keywords": ["Symfony", "Validator"],
+    "license": "BSD-2-Clause",
     "authors": [
         {
             "name": "GOTO Hidenori",
             "email": "hidenorigoto@gmail.com"
         }
     ],
-    "autoload":{
-        "psr-0": {
-            "PHPMentors\\ValidatorBundle": ""
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/config": "~2.3",
+        "symfony/dependency-injection": "~2.3",
+        "symfony/http-kernel": "~2.3",
+        "symfony/validator": "~2.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0",
+        "piece/stagehand-testrunner": ">=4.0.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "PHPMentors\\ValidatorBundle\\": "src/"
         }
     },
-    "require":{
-        "symfony/validator": ">=2.3",
-        "symfony/dependency-injection": ">=2.3"
+    "autoload-dev": {
+        "psr-4": {
+            "PHPMentors\\ValidatorBundle\\": "tests/"
+        }
     },
-    "target-dir": "PHPMentors/ValidatorBundle"
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
 }
