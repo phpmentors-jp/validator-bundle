@@ -1,5 +1,3 @@
-namespaces:
-    PHPMentors: "PHPMentors\\ValidatorBundle\\Constraints\\"
 PHPMentors\ValidatorBundle\Functional\Bundle\TestBundle\Entity\User:
     constraints:
         - PHPMentors:ServiceCallback:

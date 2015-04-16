@@ -1,6 +1,7 @@
 <?php
 /*
  * Copyright (c) 2014 GOTO Hidenori <hidenorigoto@gmail.com>,
+ *               2015 KUBO Atsuhiro <kubo@iteman.jp>,
  * All rights reserved.
  *
  * This file is part of PHPMentorsValidatorBundle.
@@ -12,12 +13,22 @@
 
 namespace PHPMentors\ValidatorBundle;
 
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
+use PHPMentors\ValidatorBundle\DependencyInjection\Compiler\ReplaceFileLoadersPass;
 use PHPMentors\ValidatorBundle\DependencyInjection\PHPMentorsValidatorExtension;
 
 class PHPMentorsValidatorBundle extends Bundle
 {
+    /**
+     * {@inheritDoc}
+     */
+    public function build(ContainerBuilder $container)
+    {
+        $container->addCompilerPass(new ReplaceFileLoadersPass());
+    }
+
     /**
      * {@inheritDoc}
      */

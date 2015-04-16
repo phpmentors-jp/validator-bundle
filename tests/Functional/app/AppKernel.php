@@ -31,6 +31,7 @@ class AppKernel extends Kernel
         return array(
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
+            new Symfony\Bundle\MonologBundle\MonologBundle(),
             new PHPMentors\PageflowerBundle\PHPMentorsPageflowerBundle(),
             new PHPMentors\ValidatorBundle\PHPMentorsValidatorBundle(),
             new PHPMentors\ValidatorBundle\Functional\Bundle\TestBundle\TestBundle(),
