@@ -1,22 +1,31 @@
-# Symfony2 Extra Constraint/Validator Set
+# PHPMentorsValidatorBundle
 
+Validation enhancements for Symfony applications
+
+[![Total Downloads](https://poser.pugx.org/phpmentors/validator-bundle/downloads.png)](https://packagist.org/packages/phpmentors/validator-bundle)
+[![Latest Stable Version](https://poser.pugx.org/phpmentors/validator-bundle/v/stable.png)](https://packagist.org/packages/phpmentors/validator-bundle)
+[![Latest Unstable Version](https://poser.pugx.org/phpmentors/validator-bundle/v/unstable.png)](https://packagist.org/packages/phpmentors/validator-bundle)
 [![Build Status](https://travis-ci.org/phpmentors-jp/validator-bundle.svg?branch=master)](https://travis-ci.org/phpmentors-jp/validator-bundle)
+
+## Features
+
+* Namespace alias configuration
+* ServiceCallback constraint
 
 ## Installation
 
-via Composer/Packagist
+`PHPMentorsValidatorBundle` can be installed using [Composer](http://getcomposer.org/).
+
+First, add the dependency to `phpmentors/validator-bundle` into your `composer.json` file as the following:
 
 ```
-# in composer.json
-"phpmentors/validator-bundle": "~0.1"
-
-# or composer command
-$ php composer.phar require phpmentors/validator-bundle
+composer require phpmentors/validator-bundle "~1.0@dev"
 ```
 
-and add a line for loading this bundle in AppKernel.php
+Second, add `PHPMentorsValidatorBundle` into your bundles to register in `AppKernel::registerBundles()` as the following:
 
-```
+```php
+...
 class AppKernel extends Kernel
 {
     public function registerBundles()
@@ -25,48 +34,17 @@ class AppKernel extends Kernel
             ...
             new PHPMentors\ValidatorBundle\PHPMentorsValidatorBundle(),
         );
-
         ...
 ```
 
+## Support
 
-## ServiceCallback
+If you find a bug or have a question, or want to request a feature, create an issue or pull request for it on [Issues](https://github.com/phpmentors-jp/validator-bundle/issues).
 
-ServiceCallback constraint and ServiceCallbackValidator enables to validate a value using a method of a service registered in Symfony's service container.
+## Copyright
 
-```
-/**
- * @ServiceCallback(service="mydomain.specification.email_limit",method="isSatisfiedBy",
-    message="email limit error.", errorPath="emailMax", groups={"user_check"})
- */
-class User
-{
+Copyright (c) 2014 GOTO Hidenori, 2015 KUBO Atsuhiro, All rights reserved.
 
-```
+## License
 
-```
-/**
- * @DI\Service("mydomain.specification.email_limit")
- */
-class EmailLimit
-{
-    public function isSatisfiedBy($target)
-    {
-        return $target->getEmailsCount() > 5;  // Sometimes exceed the limit.
-    }
-}
-```
-
-### Return value and validation result
-
-* When the service method returns `false`, the validation fails.
-* When any other, the validation passes.
-
-### Options
-
-| Option               | Description                                                         |
-| -------------------- |---------------------------------------------------------------------|
-| service              | Specify service name                                                |
-| method               | Specify method name to be called                                    |
-| message              | (Optional) Error message                                            |
-| errorPath            | (Optional) PropertyPath for which error message displayed in        |
+[The BSD 2-Clause License](http://opensource.org/licenses/BSD-2-Clause)
