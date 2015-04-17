@@ -2,12 +2,16 @@
     "name": "phpmentors/validator-bundle",
     "type": "symfony-bundle",
     "description": "Validation enhancements for Symfony applications",
-    "keywords": ["Symfony", "Validator"],
+    "keywords": ["symfony", "validator", "validation"],
     "license": "BSD-2-Clause",
     "authors": [
         {
             "name": "GOTO Hidenori",
             "email": "hidenorigoto@gmail.com"
+        },
+        {
+            "name": "KUBO Atsuhiro",
+            "email": "kubo@iteman.jp"
         }
     ],
     "require": {
