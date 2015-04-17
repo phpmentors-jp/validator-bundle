@@ -5,7 +5,7 @@ Validation enhancements for Symfony applications
 [![Total Downloads](https://poser.pugx.org/phpmentors/validator-bundle/downloads.png)](https://packagist.org/packages/phpmentors/validator-bundle)
 [![Latest Stable Version](https://poser.pugx.org/phpmentors/validator-bundle/v/stable.png)](https://packagist.org/packages/phpmentors/validator-bundle)
 [![Latest Unstable Version](https://poser.pugx.org/phpmentors/validator-bundle/v/unstable.png)](https://packagist.org/packages/phpmentors/validator-bundle)
-[![Build Status](https://travis-ci.org/phpmentors-jp/validator-bundle.svg?branch=master)](https://travis-ci.org/phpmentors-jp/validator-bundle)
+[![Build Status](https://travis-ci.org/phpmentors-jp/validator-bundle.svg?branch=1.0)](https://travis-ci.org/phpmentors-jp/validator-bundle)
 
 ## Features
 
