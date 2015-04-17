@@ -38,6 +38,6 @@ class ServiceCallback extends Constraint
      */
     public function validatedBy()
     {
-        return 'PHPMentorsServiceCallbackValidator';
+        return 'phpmentors_service_callback';
     }
 }
