@@ -1,7 +1,7 @@
 {
     "name": "phpmentors/validator-bundle",
     "type": "symfony-bundle",
-    "description":"Extra Validator for Symfony",
+    "description": "Validation enhancements for Symfony applications",
     "keywords": ["Symfony", "Validator"],
     "license": "BSD-2-Clause",
     "authors": [
