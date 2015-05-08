@@ -14,7 +14,7 @@ namespace PHPMentors\ValidatorBundle\Constraints;
 
 class ServiceCallbackTest extends \PHPUnit_Framework_TestCase
 {
-    const SERVICE_NAME   = 'test.bar_service';
+    const SERVICE_NAME = 'test.bar_service';
     const SERVICE_METHOD = 'bazMethod';
     /**
      * @test
@@ -23,7 +23,7 @@ class ServiceCallbackTest extends \PHPUnit_Framework_TestCase
     {
         $constraint = new ServiceCallback(array(
             'service' => self::SERVICE_NAME,
-            'method' =>  self::SERVICE_METHOD,
+            'method' => self::SERVICE_METHOD,
         ));
 
         $this->assertThat($constraint, $this->isInstanceOf('PHPMentors\ValidatorBundle\Constraints\ServiceCallback'));

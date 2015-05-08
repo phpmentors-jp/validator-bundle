@@ -14,7 +14,6 @@ namespace PHPMentors\ValidatorBundle\Functional\Bundle\TestBundle\Specification;
 
 use PHPMentors\DomainKata\Entity\EntityInterface;
 use PHPMentors\DomainKata\Specification\SpecificationInterface;
-
 use PHPMentors\ValidatorBundle\Functional\Bundle\TestBundle\Entity\User;
 
 /**

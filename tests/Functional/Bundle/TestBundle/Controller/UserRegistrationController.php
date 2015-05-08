@@ -22,12 +22,11 @@ use PHPMentors\PageflowerBundle\Annotation\Stateful;
 use PHPMentors\PageflowerBundle\Annotation\Transition;
 use PHPMentors\PageflowerBundle\Controller\ConversationalControllerInterface;
 use PHPMentors\PageflowerBundle\Conversation\ConversationContext;
+use PHPMentors\ValidatorBundle\Functional\Bundle\TestBundle\Entity\User;
+use PHPMentors\ValidatorBundle\Functional\Bundle\TestBundle\Form\Type\UserRegistrationType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-
-use PHPMentors\ValidatorBundle\Functional\Bundle\TestBundle\Entity\User;
-use PHPMentors\ValidatorBundle\Functional\Bundle\TestBundle\Form\Type\UserRegistrationType;
 
 /**
  * @since Class available since Release 1.0.0
@@ -78,7 +77,8 @@ class UserRegistrationController extends Controller implements ConversationalCon
     }
 
     /**
-     * @param  Request  $request
+     * @param Request $request
+     *
      * @return Response
      *
      * @Accept("input")

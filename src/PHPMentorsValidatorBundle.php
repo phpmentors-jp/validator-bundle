@@ -13,11 +13,10 @@
 
 namespace PHPMentors\ValidatorBundle;
 
-use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\HttpKernel\Bundle\Bundle;
-
 use PHPMentors\ValidatorBundle\DependencyInjection\Compiler\ReplaceFileLoadersPass;
 use PHPMentors\ValidatorBundle\DependencyInjection\PHPMentorsValidatorExtension;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class PHPMentorsValidatorBundle extends Bundle
 {

@@ -14,6 +14,10 @@
 namespace PHPMentors\ValidatorBundle\Mapping\Factory;
 
 use Doctrine\Common\Annotations\Reader;
+use PHPMentors\ValidatorBundle\Mapping\Loader\XmlFileLoader;
+use PHPMentors\ValidatorBundle\Mapping\Loader\XmlFilesLoader;
+use PHPMentors\ValidatorBundle\Mapping\Loader\YamlFileLoader;
+use PHPMentors\ValidatorBundle\Mapping\Loader\YamlFilesLoader;
 use Symfony\Component\Validator\Mapping\Cache\CacheInterface;
 use Symfony\Component\Validator\Mapping\ClassMetadataFactory;
 use Symfony\Component\Validator\Mapping\Factory\LazyLoadingMetadataFactory;
@@ -23,11 +27,6 @@ use Symfony\Component\Validator\Mapping\Loader\LoaderChain;
 use Symfony\Component\Validator\Mapping\Loader\StaticMethodLoader;
 use Symfony\Component\Validator\Validation;
 use Symfony\Component\Validator\ValidatorBuilder;
-
-use PHPMentors\ValidatorBundle\Mapping\Loader\XmlFileLoader;
-use PHPMentors\ValidatorBundle\Mapping\Loader\XmlFilesLoader;
-use PHPMentors\ValidatorBundle\Mapping\Loader\YamlFileLoader;
-use PHPMentors\ValidatorBundle\Mapping\Loader\YamlFilesLoader;
 
 /**
  * @since Class available since Release 1.0.0
@@ -127,6 +126,7 @@ class MetadataFactoryFactory
 
     /**
      * @return MetadataFactoryInterface
+     *
      * @see ValidatorBuilder::getValidator()
      */
     public function create()
