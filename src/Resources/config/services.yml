@@ -36,7 +36,7 @@ services:
         calls:
             - [ setContainer, ["@service_container"] ]
         tags:
-            - { name: validator.constraint_validator, alias: phpmentors_service_callback }
+            - { name: validator.constraint_validator, alias: phpmentors_validator.service_callback_validator }
 
     phpmentors_validator.xml_files_loader:
         class: "%phpmentors_validator.xml_files_loader.class%"
