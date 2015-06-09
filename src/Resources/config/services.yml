@@ -32,7 +32,7 @@ services:
             - [ setConstraintNamespaces, ["%phpmentors_validator.constraint_namespaces%"] ]
 
     phpmentors_validator.service_callback:
-        class: %phpmentors_validator.service_callback.class%
+        class: "%phpmentors_validator.service_callback.class%"
         calls:
             - [ setContainer, ["@service_container"] ]
         tags:
