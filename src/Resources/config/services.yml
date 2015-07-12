@@ -23,8 +23,7 @@ parameters:
 services:
     phpmentors_validator.metadata_factory:
         class: "%phpmentors_validator.metadata_factory.class%"
-        factory_service: phpmentors_validator.metadata_factory_factory
-        factory_method: create
+        factory: ["@phpmentors_validator.metadata_factory_factory", create]
 
     phpmentors_validator.metadata_factory_factory:
         class: "%phpmentors_validator.metadata_factory_factory.class%"
