@@ -1,4 +1,15 @@
 <?php
+/*
+ * Copyright (c) 2015 KUBO Atsuhiro <kubo@iteman.jp>,
+ * All rights reserved.
+ *
+ * This file is part of PHPMentorsValidatorBundle.
+ *
+ * This program and the accompanying materials are made available under
+ * the terms of the BSD 2-Clause License which accompanies this
+ * distribution, and is available at http://opensource.org/licenses/BSD-2-Clause
+ */
+
 namespace PHPMentors\ValidatorBundle\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
@@ -35,26 +46,22 @@ class ReplaceFileLoadersPass implements CompilerPassInterface
                 list($method, $arguments) = $methodCall;
 
                 switch ($method) {
-                    case 'addMethodMapping':
-                        $metadataFactoryFactoryDefinition->addMethodCall('addMethodMapping', $arguments);
-                        break;
-                    case 'addXmlMappings':
-                        $metadataFactoryFactoryDefinition->addMethodCall('setXmlMappings', $arguments);
-                        break;
-                    case 'addYamlMappings':
-                        $metadataFactoryFactoryDefinition->addMethodCall('setYamlMappings', $arguments);
-                        break;
-                    case 'enableAnnotationMapping':
-                        $metadataFactoryFactoryDefinition->addMethodCall('setAnnotationReader', array(clone $arguments[0]));
-                        break;
-                    case 'setApiVersion':
-                        $metadataFactoryFactoryDefinition->addMethodCall('setApiVersion', $arguments);
-                        break;
-                    case 'setMetadataCache':
-                        $metadataFactoryFactoryDefinition->addMethodCall('setMetadataCache', array(clone $arguments[0]));
-                        break;
-                    default:
-                        break;
+                case 'addMethodMapping':
+                case 'addMethodMappings':
+                case 'addXmlMapping':
+                case 'addXmlMappings':
+                case 'addYamlMapping':
+                case 'addYamlMappings':
+                    $metadataFactoryFactoryDefinition->addMethodCall($method, $arguments);
+                    break;
+                case 'enableAnnotationMapping':
+                    $metadataFactoryFactoryDefinition->addMethodCall('setAnnotationReader', array(clone $arguments[0]));
+                    break;
+                case 'setMetadataCache':
+                    $metadataFactoryFactoryDefinition->addMethodCall($method, array(clone $arguments[0]));
+                    break;
+                default:
+                    break;
                 }
             }
 
@@ -62,7 +69,7 @@ class ReplaceFileLoadersPass implements CompilerPassInterface
                 array_filter($methodCalls, function ($methodCall) {
                     list($method, $arguments) = $methodCall;
 
-                    return !in_array($method, array('addMethodMapping', 'addXmlMappings', 'addYamlMappings', 'enableAnnotationMapping'));
+                    return !in_array($method, array('addMethodMapping', 'addMethodMappings', 'addXmlMapping', 'addXmlMappings', 'addYamlMapping', 'addYamlMappings', 'enableAnnotationMapping', 'setMetadataCache'));
                 }),
                 array(array('setMetadataFactory', array(new Reference('phpmentors_validator.metadata_factory'))))
             ));

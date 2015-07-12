@@ -1,7 +1,6 @@
 <?php
 /*
- * Copyright (c) 2014 GOTO Hidenori <hidenorigoto@gmail.com>,
- *               2015 KUBO Atsuhiro <kubo@iteman.jp>,
+ * Copyright (c) 2015 KUBO Atsuhiro <kubo@iteman.jp>,
  * All rights reserved.
  *
  * This file is part of PHPMentorsValidatorBundle.
@@ -19,13 +18,11 @@ use PHPMentors\ValidatorBundle\Mapping\Loader\XmlFilesLoader;
 use PHPMentors\ValidatorBundle\Mapping\Loader\YamlFileLoader;
 use PHPMentors\ValidatorBundle\Mapping\Loader\YamlFilesLoader;
 use Symfony\Component\Validator\Mapping\Cache\CacheInterface;
-use Symfony\Component\Validator\Mapping\ClassMetadataFactory;
 use Symfony\Component\Validator\Mapping\Factory\LazyLoadingMetadataFactory;
 use Symfony\Component\Validator\Mapping\Factory\MetadataFactoryInterface;
 use Symfony\Component\Validator\Mapping\Loader\AnnotationLoader;
 use Symfony\Component\Validator\Mapping\Loader\LoaderChain;
 use Symfony\Component\Validator\Mapping\Loader\StaticMethodLoader;
-use Symfony\Component\Validator\Validation;
 use Symfony\Component\Validator\ValidatorBuilder;
 
 /**
@@ -37,11 +34,6 @@ class MetadataFactoryFactory
      * @var Reader
      */
     private $annotationReader;
-
-    /**
-     * @var int
-     */
-    private $apiVersion;
 
     /**
      * @var array
@@ -77,14 +69,6 @@ class MetadataFactoryFactory
     }
 
     /**
-     * @param int $apiVersion
-     */
-    public function setApiVersion($apiVersion)
-    {
-        $this->apiVersion = $apiVersion;
-    }
-
-    /**
      * @param array $constraintNamespaces
      */
     public function setConstraintNamespaces(array $constraintNamespaces)
@@ -93,27 +77,51 @@ class MetadataFactoryFactory
     }
 
     /**
+     * @param string $xmlMapping
+     */
+    public function addXmlMapping($xmlMapping)
+    {
+        $this->xmlMappings[] = $xmlMapping;
+    }
+
+    /**
      * @param string[] $xmlMappings
      */
-    public function setXmlMappings(array $xmlMappings)
+    public function addXmlMappings(array $xmlMappings)
     {
-        $this->xmlMappings = $xmlMappings;
+        $this->xmlMappings = array_merge($this->xmlMappings, $xmlMappings);
+    }
+
+    /**
+     * @param string $yamlMapping
+     */
+    public function addYamlMapping($yamlMapping)
+    {
+        $this->yamlMappings[] = $yamlMapping;
     }
 
     /**
      * @param string[] $yamlMappings
      */
-    public function setYamlMappings(array $yamlMappings)
+    public function addYamlMappings(array $yamlMappings)
     {
-        $this->yamlMappings = $yamlMappings;
+        $this->yamlMappings = array_merge($this->yamlMappings, $yamlMappings);
     }
 
     /**
-     * @param string $methodName
+     * @param string $methodMapping
      */
-    public function addMethodMapping($methodName)
+    public function addMethodMapping($methodMapping)
     {
-        $this->methodMappings[] = $methodName;
+        $this->methodMappings[] = $methodMapping;
+    }
+
+    /**
+     * @param string[] $methodMappings
+     */
+    public function addMethodMappings(array $methodMappings)
+    {
+        $this->methodMappings = array_merge($this->methodMappings, $methodMappings);
     }
 
     /**
@@ -161,12 +169,6 @@ class MetadataFactoryFactory
             $loader = $loaders[0];
         }
 
-        if (Validation::API_VERSION_2_5 === $this->apiVersion) {
-            $metadataFactory = new LazyLoadingMetadataFactory($loader, $this->metadataCache);
-        } else {
-            $metadataFactory = new ClassMetadataFactory($loader, $this->metadataCache);
-        }
-
-        return $metadataFactory;
+        return new LazyLoadingMetadataFactory($loader, $this->metadataCache);
     }
 }
