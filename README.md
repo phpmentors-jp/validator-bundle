@@ -10,7 +10,9 @@ Validation enhancements for Symfony applications
 ## Features
 
 * Namespace alias configuration
-* ServiceCallback constraint
+* Constraints
+  * AtLeastOneOf
+  * ServiceCallback
 
 ## Installation
 
