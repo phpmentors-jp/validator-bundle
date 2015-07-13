@@ -20,13 +20,13 @@ Validation enhancements for Symfony applications
 
 First, add the dependency to `phpmentors/validator-bundle` into your `composer.json` file as the following:
 
-Stable version:
+**Stable version**:
 
 ```
 composer require phpmentors/validator-bundle "1.1.*"
 ```
 
-Development version:
+**Development version**:
 
 ```
 composer require phpmentors/validator-bundle "~1.2@dev"
