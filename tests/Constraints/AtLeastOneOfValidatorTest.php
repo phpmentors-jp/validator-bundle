@@ -25,7 +25,7 @@ use Symfony\Component\Validator\Validation;
 class AtLeastOneOfValidatorTest extends AbstractConstraintValidatorTest
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     protected function getApiVersion()
     {
@@ -33,7 +33,7 @@ class AtLeastOneOfValidatorTest extends AbstractConstraintValidatorTest
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     protected function createValidator()
     {

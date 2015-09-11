@@ -36,7 +36,7 @@ class AtLeastOneOf extends Constraint
     public $message = 'At least one of {{ properties }} is required.';
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getDefaultOption()
     {
@@ -44,7 +44,7 @@ class AtLeastOneOf extends Constraint
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getRequiredOptions()
     {

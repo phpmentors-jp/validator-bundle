@@ -22,7 +22,7 @@ class YamlFilesLoader extends FilesLoader
     private $constraintNamespaces;
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      *
      * @param array $constraintNamespaces
      */
@@ -34,7 +34,7 @@ class YamlFilesLoader extends FilesLoader
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     protected function getFileLoaderInstance($file)
     {

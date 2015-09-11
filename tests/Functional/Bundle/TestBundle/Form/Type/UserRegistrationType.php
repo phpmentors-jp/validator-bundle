@@ -21,7 +21,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 class UserRegistrationType extends AbstractType
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -33,7 +33,7 @@ class UserRegistrationType extends AbstractType
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getName()
     {

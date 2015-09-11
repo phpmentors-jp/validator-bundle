@@ -15,7 +15,7 @@ namespace PHPMentors\ValidatorBundle\Mapping\Loader;
 class XmlFileLoader extends \Symfony\Component\Validator\Mapping\Loader\XmlFileLoader
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      *
      * @param array $constraintNamespaces
      */

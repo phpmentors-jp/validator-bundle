@@ -22,7 +22,7 @@ use Symfony\Component\Filesystem\Filesystem;
 class FormValidationTest extends WebTestCase
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     protected function setUp()
     {
@@ -33,7 +33,7 @@ class FormValidationTest extends WebTestCase
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     protected function tearDown()
     {
@@ -43,7 +43,7 @@ class FormValidationTest extends WebTestCase
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     protected static function createKernel(array $options = array())
     {

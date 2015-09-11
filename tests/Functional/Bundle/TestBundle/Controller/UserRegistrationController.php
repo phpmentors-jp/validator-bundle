@@ -61,7 +61,7 @@ class UserRegistrationController extends Controller implements ConversationalCon
     private $user;
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function setConversationContext(ConversationContext $conversationContext)
     {

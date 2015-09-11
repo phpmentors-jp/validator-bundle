@@ -22,7 +22,7 @@ class XmlFilesLoader extends FilesLoader
     private $constraintNamespaces;
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      *
      * @param array $constraintNamespaces
      */
@@ -34,7 +34,7 @@ class XmlFilesLoader extends FilesLoader
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     protected function getFileLoaderInstance($file)
     {

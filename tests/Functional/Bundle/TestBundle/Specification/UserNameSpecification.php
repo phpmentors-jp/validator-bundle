@@ -22,7 +22,7 @@ use PHPMentors\ValidatorBundle\Functional\Bundle\TestBundle\Entity\User;
 class UserNameSpecification implements SpecificationInterface
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function isSatisfiedBy(EntityInterface $entity)
     {

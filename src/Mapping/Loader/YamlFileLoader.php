@@ -15,7 +15,7 @@ namespace PHPMentors\ValidatorBundle\Mapping\Loader;
 class YamlFileLoader extends \Symfony\Component\Validator\Mapping\Loader\YamlFileLoader
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      *
      * @param array $constraintNamespaces
      */
