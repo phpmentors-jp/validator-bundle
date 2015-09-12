@@ -12,7 +12,7 @@ parameters:
     # Classes
     phpmentors_validator.metadata_factory.class: "Symfony\\Component\\Validator\\Mapping\\Factory\\MetadataFactoryInterface"
     phpmentors_validator.metadata_factory_factory.class: "PHPMentors\\ValidatorBundle\\Mapping\\Factory\\MetadataFactoryFactory"
-    phpmentors_validator.service_callback_validator.class: PHPMentors\ValidatorBundle\Constraints\ServiceCallbackValidator
+    phpmentors_validator.service_callback_validator.class: "PHPMentors\\ValidatorBundle\\Constraints\\ServiceCallbackValidator"
     phpmentors_validator.xml_files_loader.class: "PHPMentors\\ValidatorBundle\\Mapping\\Loader\\XmlFilesLoader"
     phpmentors_validator.yaml_files_loader.class: "PHPMentors\\ValidatorBundle\\Mapping\\Loader\\YamlFilesLoader"
 
