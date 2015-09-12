@@ -71,7 +71,6 @@ class RangeValidator extends \Symfony\Component\Validator\Constraints\RangeValid
             $min = call_user_func($minFactory);
             if ($min instanceof \DateTime || $min instanceof \DateTimeInterface) {
                 $constraint->min = clone $min;
-                $constraint->min->modify('+1 seconds');
             } else {
                 $constraint->min = $min;
             }

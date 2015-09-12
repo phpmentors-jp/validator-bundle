@@ -90,12 +90,12 @@ class RangeValidatorTest extends AbstractConstraintValidatorTest
             array(20, 40, 39, 0),
             array(20, 40, 40, 0),
             array(20, 40, 41, 1),
-            array($this->date('1974-09-12'), $this->date('1995-09-12'), $this->date('1995-09-11'), 0),
-            array($this->date('1974-09-12'), $this->date('1995-09-12'), $this->date('1995-09-12'), 0),
-            array($this->date('1974-09-12'), $this->date('1995-09-12'), $this->date('1995-09-13'), 1),
-            array($this->date('1974-09-12'), $this->date('1995-09-12'), $this->date('1974-09-11'), 1),
-            array($this->date('1974-09-12'), $this->date('1995-09-12'), $this->date('1974-09-12'), 1),
-            array($this->date('1974-09-12'), $this->date('1995-09-12'), $this->date('1974-09-13'), 0),
+            array($this->date('1974-09-13'), $this->date('1995-09-12'), $this->date('1995-09-11'), 0),
+            array($this->date('1974-09-13'), $this->date('1995-09-12'), $this->date('1995-09-12'), 0),
+            array($this->date('1974-09-13'), $this->date('1995-09-12'), $this->date('1995-09-13'), 1),
+            array($this->date('1974-09-13'), $this->date('1995-09-12'), $this->date('1974-09-11'), 1),
+            array($this->date('1974-09-13'), $this->date('1995-09-12'), $this->date('1974-09-12'), 1),
+            array($this->date('1974-09-13'), $this->date('1995-09-12'), $this->date('1974-09-13'), 0),
         );
     }
 
