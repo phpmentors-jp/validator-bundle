@@ -1,7 +1,6 @@
 <?php
 /*
- * Copyright (c) 2014 GOTO Hidenori <hidenorigoto@gmail.com>,
- *               2015 KUBO Atsuhiro <kubo@iteman.jp>,
+ * Copyright (c) GOTO Hidenori <hidenorigoto@gmail.com>, KUBO Atsuhiro <kubo@iteman.jp>, and contributors,
  * All rights reserved.
  *
  * This file is part of PHPMentorsValidatorBundle.
