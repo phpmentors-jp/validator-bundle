@@ -24,13 +24,13 @@ First, add the dependency to `phpmentors/validator-bundle` into your `composer.j
 **Stable version**:
 
 ```
-composer require phpmentors/validator-bundle "1.1.*"
+composer require phpmentors/validator-bundle "1.2.*"
 ```
 
 **Development version**:
 
 ```
-composer require phpmentors/validator-bundle "~1.2@dev"
+composer require phpmentors/validator-bundle "~1.3@dev"
 ```
 
 Second, add `PHPMentorsValidatorBundle` into your bundles to register in `AppKernel::registerBundles()` as the following:
