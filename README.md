@@ -54,7 +54,7 @@ If you find a bug or have a question, or want to request a feature, create an is
 
 ## Copyright
 
-Copyright (c) GOTO Hidenori, KUBO Atsuhiro, and contributors, All rights reserved.
+Copyright (c) 2014-2016 GOTO Hidenori, KUBO Atsuhiro, and contributors, All rights reserved.
 
 ## License
 
