@@ -1,6 +1,10 @@
+/.buildpath
 /.composer/
+/.idea/
+/.project
+/.settings/
 /composer.lock
 /composer.phar
 /php-cs-fixer.phar
 /vendor/
-
+*.iml
