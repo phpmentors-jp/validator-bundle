@@ -52,8 +52,10 @@ class ServiceCallbackValidator extends ConstraintValidator implements ContainerA
         $result = call_user_func(array($service, $constraint->method), $object);
 
         if (false == $result) {
-            if (null !== $constraint->errorPath) {
-                $this->context->addViolationAt($constraint->errorPath, $constraint->message);
+            if (null != $constraint->errorPath) {
+                $this->context->buildViolation($constraint->message)
+                    ->atPath($constraint->errorPath)
+                    ->addViolation();
             } else {
                 $this->context->addViolation($constraint->message);
             }

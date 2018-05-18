@@ -16,13 +16,12 @@ use PHPMentors\ValidatorBundle\Fixtures\AtLeastOneOfEntity;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\ConstraintViolationInterface;
 use Symfony\Component\Validator\Exception\ConstraintDefinitionException;
-use Symfony\Component\Validator\Tests\Constraints\AbstractConstraintValidatorTest;
 use Symfony\Component\Validator\Validation;
 
 /**
  * @since Class available since Release 1.1.0
  */
-class AtLeastOneOfValidatorTest extends AbstractConstraintValidatorTest
+class AtLeastOneOfValidatorTest extends AbstractConstraintValidatorTestCase
 {
     /**
      * {@inheritdoc}
@@ -77,8 +76,7 @@ class AtLeastOneOfValidatorTest extends AbstractConstraintValidatorTest
         $this->metadata->addPropertyConstraint('a', new NotBlank());
         $this->metadata->addPropertyConstraint('b', new NotBlank());
         $this->metadata->addConstraint($constraint);
-        $metadataFactory = $this->context->getMetadataFactory();
-        $metadataFactory->method('getMetadataFor')->willReturn($this->metadata);
+        $this->context->getValidator()->method('getMetadataFor')->willReturn($this->metadata);
 
         $this->validator->validate($value, $constraint);
 
@@ -101,8 +99,7 @@ class AtLeastOneOfValidatorTest extends AbstractConstraintValidatorTest
         $this->metadata->addPropertyConstraint('a', new NotBlank());
         $this->metadata->addPropertyConstraint('b', new NotBlank());
         $this->metadata->addConstraint($constraint);
-        $metadataFactory = $this->context->getMetadataFactory();
-        $metadataFactory->method('getMetadataFor')->willReturn($this->metadata);
+        $this->context->getValidator()->method('getMetadataFor')->willReturn($this->metadata);
 
         $this->validator->validate($value, $constraint);
         $violations = $this->context->getViolations();
@@ -133,8 +130,7 @@ class AtLeastOneOfValidatorTest extends AbstractConstraintValidatorTest
         $this->metadata->addPropertyConstraint('b', new NotBlank());
         $this->metadata->addPropertyConstraint('c', new NotBlank());
         $this->metadata->addConstraint($constraint);
-        $metadataFactory = $this->context->getMetadataFactory();
-        $metadataFactory->method('getMetadataFor')->willReturn($this->metadata);
+        $this->context->getValidator()->method('getMetadataFor')->willReturn($this->metadata);
 
         $this->validator->validate($value, $constraint);
         $violations = $this->context->getViolations();
@@ -163,8 +159,7 @@ class AtLeastOneOfValidatorTest extends AbstractConstraintValidatorTest
         $this->metadata->addPropertyConstraint('b', new NotBlank());
         $this->metadata->addPropertyConstraint('c', new NotBlank());
         $this->metadata->addConstraint($constraint);
-        $metadataFactory = $this->context->getMetadataFactory();
-        $metadataFactory->method('getMetadataFor')->willReturn($this->metadata);
+        $this->context->getValidator()->method('getMetadataFor')->willReturn($this->metadata);
 
         try {
             $this->validator->validate($value, $constraint);

@@ -42,7 +42,7 @@ class AtLeastOneOfValidator extends ConstraintValidator
             throw new UnexpectedTypeException($constraint->errorPath, 'array or null');
         }
 
-        $metadata = $this->context->getMetadataFactory()->getMetadataFor($value);
+        $metadata = $this->context->getValidator()->getMetadataFor($value);
         if ($metadata === null) {
             throw new InvalidArgumentException(sprintf('The metadata is not found for the class "%s".', get_class($value)));
         }
@@ -62,7 +62,7 @@ class AtLeastOneOfValidator extends ConstraintValidator
 
         $errorPaths = $constraint->errorPaths === null ? $constraint->properties : $constraint->errorPaths;
         foreach ($errorPaths as $errorPath) {
-            $this->buildViolation($constraint->message)
+            $this->context->buildViolation($constraint->message)
                 ->atPath($errorPath)
                 ->setParameter('properties', implode(', ', $constraint->properties))
                 ->addViolation()

@@ -7,12 +7,15 @@ parameters:
 
 services:
     test.user_name_specification:
+        public: true
         class: "%test.user_name_specification.class%"
 
     test.user_registration_controller:
+        public: true
         class: "%test.user_registration_controller.class%"
         calls:
             - [setContainer, ["@service_container"]]
             - [setConversationContext, ["@phpmentors_pageflower.conversation_context"]]
         tags:
             - { name: phpmentors_pageflower.pageflow }
+            - { name: controller.service_arguments }

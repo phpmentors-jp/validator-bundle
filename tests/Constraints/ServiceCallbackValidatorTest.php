@@ -13,7 +13,7 @@
 namespace PHPMentors\ValidatorBundle\Constraints;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\Validator\ExecutionContextInterface;
+use Symfony\Component\Validator\Context\ExecutionContextInterface;
 
 class ServiceCallbackValidatorTest extends \PHPUnit_Framework_TestCase
 {
@@ -91,7 +91,7 @@ class ServiceCallbackValidatorTest extends \PHPUnit_Framework_TestCase
             ->method('addViolation')
             ->with($this->equalTo(self::ERROR_MESSAGE));
         $this->executionContext->expects($this->never())
-            ->method('addViolationAt');
+            ->method('buildViolation');
 
         $this->SUT->validate($entity, $constraint);
     }
@@ -117,14 +117,17 @@ class ServiceCallbackValidatorTest extends \PHPUnit_Framework_TestCase
             ->with($entity)
             ->will($this->returnValue(false));
 
+        $constraintViolationBuilder = $this->getMock('Symfony\Component\Validator\Violation\ConstraintViolationBuilderInterface');
+        $constraintViolationBuilder->expects($this->once())
+            ->method('atPath')
+            ->with($this->equalTo(self::ERROR_PATH))
+            ->will($this->returnValue($constraintViolationBuilder));
         $this->executionContext->expects($this->never())
             ->method('addViolation');
         $this->executionContext->expects($this->once())
-            ->method('addViolationAt')
-            ->with(
-                $this->equalTo(self::ERROR_PATH),
-                $this->equalTo(self::ERROR_MESSAGE)
-            );
+            ->method('buildViolation')
+            ->with($this->equalTo(self::ERROR_MESSAGE))
+            ->will($this->returnValue($constraintViolationBuilder));
 
         $this->SUT->validate($entity, $constraint);
     }
@@ -146,7 +149,7 @@ class ServiceCallbackValidatorTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @test
-     * @expectedException Symfony\Component\Validator\Exception\ConstraintDefinitionException
+     * @expectedException \Symfony\Component\Validator\Exception\ConstraintDefinitionException
      */
     public function nonexistentService()
     {
@@ -167,7 +170,7 @@ class ServiceCallbackValidatorTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @test
-     * @expectedException Symfony\Component\Validator\Exception\UnexpectedTypeException
+     * @expectedException \Symfony\Component\Validator\Exception\UnexpectedTypeException
      * @dataProvider illegalErrorPathData
      */
     public function illegalErrorPath($illegalErrorPath)
@@ -198,7 +201,7 @@ class ServiceCallbackValidatorTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @test
-     * @expectedException Symfony\Component\Validator\Exception\ConstraintDefinitionException
+     * @expectedException \Symfony\Component\Validator\Exception\ConstraintDefinitionException
      */
     public function nonexistentMethod()
     {
@@ -221,7 +224,7 @@ class ServiceCallbackValidatorTest extends \PHPUnit_Framework_TestCase
         $this->SUT->setContainer($this->container);
         $this->service = $this->getMock('PHPMentors\ValidatorBundle\Fixtures\BarService');
         $this->container->set(self::SERVICE_NAME, $this->service);
-        $this->executionContext = $this->getMock('Symfony\Component\Validator\ExecutionContextInterface');
+        $this->executionContext = $this->getMock('Symfony\Component\Validator\Context\ExecutionContextInterface');
         $this->SUT->initialize($this->executionContext);
     }
 
