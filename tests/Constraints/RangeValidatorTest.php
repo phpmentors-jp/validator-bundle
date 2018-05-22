@@ -13,13 +13,12 @@
 namespace PHPMentors\ValidatorBundle\Constraints;
 
 use Symfony\Component\Validator\Exception\ConstraintDefinitionException;
-use Symfony\Component\Validator\Tests\Constraints\AbstractConstraintValidatorTest;
 use Symfony\Component\Validator\Validation;
 
 /**
  * @since Class available since Release 1.2.0
  */
-class RangeValidatorTest extends AbstractConstraintValidatorTest
+class RangeValidatorTest extends AbstractConstraintValidatorTestCase
 {
     /**
      * @var int

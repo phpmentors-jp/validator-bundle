@@ -15,3 +15,9 @@ error_reporting(E_ALL);
 $loader = require dirname(__DIR__).'/vendor/autoload.php'; /* @var $loader \Composer\Autoload\ClassLoader */
 
 Doctrine\Common\Annotations\AnnotationRegistry::registerLoader(array($loader, 'loadClass'));
+
+if (class_exists('Symfony\Component\Validator\Test\ConstraintValidatorTestCase')) {
+    $loader->addPsr4('PHPMentors\ValidatorBundle\\', array(__DIR__.'/symfony4/'));
+} elseif (class_exists('Symfony\Component\Validator\Tests\Constraints\AbstractConstraintValidatorTest')) {
+    $loader->addPsr4('PHPMentors\ValidatorBundle\\', array(__DIR__.'/symfony3/'));
+}

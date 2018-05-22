@@ -26,9 +26,9 @@ class UserRegistrationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('firstName', 'text')
-            ->add('lastName', 'text')
-            ->add('next', 'submit')
+            ->add('firstName', 'Symfony\Component\Form\Extension\Core\Type\TextType')
+            ->add('lastName', 'Symfony\Component\Form\Extension\Core\Type\TextType')
+            ->add('next', 'Symfony\Component\Form\Extension\Core\Type\SubmitType')
             ;
     }
 

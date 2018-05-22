@@ -29,6 +29,10 @@ class FormValidationTest extends WebTestCase
         parent::setUp();
 
         $_SERVER['KERNEL_DIR'] = __DIR__.'/app';
+
+        require_once $_SERVER['KERNEL_DIR'].'/AppKernel.php';
+        $_SERVER['KERNEL_CLASS'] = 'AppKernel';
+
         $this->removeCacheDir();
     }
 
