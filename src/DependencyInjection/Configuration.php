@@ -30,8 +30,8 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $defaultConstraintNamespaces = self::$defaultConstraintNamespaces;
-        $treeBuilder = new TreeBuilder();
-        $treeBuilder->root('phpmentors_validator')
+        $treeBuilder = new TreeBuilder('phpmentors_validator');
+        $treeBuilder->getRootNode()
             ->children()
                 ->arrayNode('constraint')
                     ->addDefaultsIfNotSet()

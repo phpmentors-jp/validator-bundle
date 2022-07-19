@@ -54,7 +54,7 @@ class ReplaceFileLoadersPass implements CompilerPassInterface
                 case 'addYamlMappings':
                     $metadataFactoryFactoryDefinition->addMethodCall($method, $arguments);
                     break;
-                case 'enableAnnotationMapping':
+                case 'setDoctrineAnnotationReader':
                     $metadataFactoryFactoryDefinition->addMethodCall('setAnnotationReader', array(clone $arguments[0]));
                     break;
                 case 'setMetadataCache':
